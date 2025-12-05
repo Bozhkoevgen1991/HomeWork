@@ -16,7 +16,6 @@ public class DayWeek {
         System.out.println("Введите число равное дню недели от 0 до 6 ");
         Scanner scan = new Scanner(System.in);
         int dayEnter = scan.nextInt();
-        int dela = 0;
 
         String[] dayWeek = new String[7];
         dayWeek[0] = "Понедельник";
