@@ -13,49 +13,57 @@ public class DayWeek {
         При корректном дне ещё нужно вывести, сколько дней осталось до воскресенья (например, если считать, что 7 — воскресенье).
         Пример: вход 3 → вывод может быть: «Будний день: учёба/работа» и «До воскресенья осталось 4 дня» */
 
-        System.out.println("Введите число равное дню недели от 0 до 6 ");
+        System.out.println("Введите число равное дню недели от 1 до 7 ");
         Scanner scan = new Scanner(System.in);
         int dayEnter = scan.nextInt();
+        int process = 7;
 
-        String[] dayWeek = new String[7];
-        dayWeek[0] = "Понедельник";
-        dayWeek[1] = "Вторник";
-        dayWeek[2] = "Среда";
-        dayWeek[3] = "Четверг";
-        dayWeek[4] = "Пятница";
-        dayWeek[5] = "Суббота";
-        dayWeek[6] = "Воскресенье";
+        String[] dayWeek = new String[8];
+        dayWeek[0] = "";
+        dayWeek[1] = "Понедельник";
+        dayWeek[2] = "Вторник";
+        dayWeek[3] = "Среда";
+        dayWeek[4] = "Четверг";
+        dayWeek[5] = "Пятница";
+        dayWeek[6] = "Суббота";
+        dayWeek[7] = "Воскресенье";
 
-        String[] Work = new String[7];
-        Work[0] = "Подъем";
-        Work[1] = "Завтрак";
-        Work[2] = "Работа";
-        Work[3] = "Домой";
-        Work[4] = "Тренировка";
-        Work[5] = "Учёба";
-        Work[6] = "Спать";
+        String[] Work = new String[8];
+        Work[0] = "";
+        Work[1] = "Подъем";
+        Work[2] = "Завтрак";
+        Work[3] = "Работа";
+        Work[4] = "Домой";
+        Work[5] = "Тренировка";
+        Work[6] = "Учёба";
+        Work[7] = "Спать";
 
-        String[] relax = new String[7];
-        relax[0] = "Подъем";
-        relax[1] = "Завтрак";
-        relax[2] = "Гулять";
-        relax[3] = "Обед";
-        relax[4] = "Сериал";
-        relax[5] = "Бухать";
-        relax[6] = "Спать";
+        String[] relax = new String[8];
+        relax[0] = "";
+        relax[1] = "Подъем";
+        relax[2] = "Завтрак";
+        relax[3] = "Гулять";
+        relax[4] = "Обед";
+        relax[5] = "Сериал";
+        relax[6] = "Бухать";
+        relax[7] = "Спать";
 
-        if (dayEnter <= 5) {
-            System.out.println("Будний день - " + dayWeek[dayEnter]);
-            System.out.println("Список дел: ");
-            for (int i = 0; i <= dayEnter; i++) {
-                System.out.println(Work[i]);
+        if (dayEnter > 0) {
+            if (dayEnter < 5) {
+                System.out.println("Будний день - " + dayWeek[dayEnter]);
+                System.out.println("Список дел: ");
+                for (int i = 0; i <= process; i++) {
+                    System.out.println(Work[i]);
+                }
+            } else if (dayEnter >= 5) {
+                System.out.println("Выходной день - " + dayWeek[dayEnter]);
+                System.out.println("Список дел: ");
+                for (int i = 0; i <= process; i++) {
+                    System.out.println(relax[i]);
+                }
             }
-        } else if (dayEnter > 5 || dayEnter < 6) {
-            System.out.println("Будний день - " + dayWeek[dayEnter]);
-            System.out.println("Список дел: ");
-            for (int i = 0; i <= dayEnter; i++) {
-                System.out.println(relax[i]);
-            }
+        } else {
+            System.out.println("Вы ввели не корректное число ");
         }
     }
 }
