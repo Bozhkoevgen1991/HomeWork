@@ -48,7 +48,7 @@ public class DayWeek {
         relax[6] = "Бухать";
         relax[7] = "Спать";
 
-        if (dayEnter > 0) {
+        if (dayEnter > 1 || dayEnter <= 7) {
             if (dayEnter < 5) {
                 System.out.println("Будний день - " + dayWeek[dayEnter]);
                 System.out.println("Список дел: ");
@@ -61,7 +61,8 @@ public class DayWeek {
                 for (int i = 0; i <= process; i++) {
                     System.out.println(relax[i]);
                 }
-            }
+            } process = 7 - dayEnter;
+            System.out.println("Дней до воскресенья осталось - " + process);
         } else {
             System.out.println("Вы ввели не корректное число ");
         }
