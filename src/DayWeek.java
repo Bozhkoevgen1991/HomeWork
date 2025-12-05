@@ -50,7 +50,7 @@ public class DayWeek {
             for (int i = 0; i <= dayEnter; i++) {
                 System.out.println(Work[i]);
             }
-        } else if (dayEnter > 5 || dayEnter < 7) {
+        } else if (dayEnter > 5 || dayEnter < 6) {
             System.out.println("Будний день - " + dayWeek[dayEnter]);
             System.out.println("Список дел: ");
             for (int i = 0; i <= dayEnter; i++) {
